@@ -138,3 +138,19 @@ plt.xlabel("Epochs")
 plt.ylabel("Loss")
 plt.legend()
 plt.show()
+
+# Generate Final Sample Images
+def generate_images():
+    generator.load_state_dict(torch.load("dcgan_generator.pth"))
+    generator.to(device)
+    generator.eval()
+    with torch.no_grad():
+        fake_images = generator(fixed_noise).cpu()
+    plt.figure(figsize=(8, 8))
+    plt.axis("off")
+    plt.title("Generated Images")
+    plt.imshow(np.transpose(vutils.make_grid(fake_images, padding=2, normalize=True), (1, 2, 0)))
+    plt.show()
+
+generate_images()
+
