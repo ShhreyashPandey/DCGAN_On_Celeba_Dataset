@@ -43,3 +43,8 @@ This project implements a Deep Convolutional Generative Adversarial Network (DCG
 * Generated images are saved after each epoch.
 * Loss curves are plotted at the end of training.
 * Generated images can be viewed to evaluate performance.
+
+##  Expected Outputs
+
+* The final output consists of generated 64x64 images of human faces.
+* Loss curves during training for the Generator and Discriminator.
